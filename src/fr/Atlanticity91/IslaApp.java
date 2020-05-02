@@ -16,7 +16,7 @@ import java.awt.*;
  * @author : ALVES Quentin
  * @note : Defined application core class.
  **/
-public class IslaApp extends JFrame {
+public final class IslaApp extends JFrame {
 
     private IslaModelManager models;
     private IslaControllerManager controllers;

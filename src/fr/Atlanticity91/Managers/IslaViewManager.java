@@ -5,11 +5,23 @@ import fr.Atlanticity91.View.PlayerView;
 
 import javax.swing.*;
 
-public class IslaViewManager {
+/**
+ * IslaViewManager class
+ * @author : ALVES Quentin
+ * @note : Defined view management code.
+ **/
+public final class IslaViewManager {
 
-    private MapView map;
-    private PlayerView player;
+    private final MapView map;
+    private final PlayerView player;
 
+    /**
+     * Constructor
+     * @author : ALVES Quentin
+     * @param window : Current window instance.
+     * @param models : Current model manager instance.
+     * @param controllers : Current controller manager instance.
+     **/
     public IslaViewManager( JFrame window, IslaModelManager models, IslaControllerManager controllers ) {
         this.map = new MapView( models, controllers );
         this.player = new PlayerView( models, controllers );

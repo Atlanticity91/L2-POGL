@@ -9,9 +9,14 @@ import fr.Atlanticity91.Model.MapModel;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * MapController class
+ * @author : ALVES Quentin
+ * @note : Defined map controller class.
+ **/
 public class MapController extends Controller {
 
-    private Random generator;
+    private final Random generator;
 
     /**
      * Constructor

@@ -1,28 +1,29 @@
 package fr.Atlanticity91.View;
 
 import fr.Atlanticity91.Base.ENotifyEvents;
-import fr.Atlanticity91.Controller.Controller;
+import fr.Atlanticity91.Base.Point;
 import fr.Atlanticity91.Managers.IslaControllerManager;
 import fr.Atlanticity91.Managers.IslaModelManager;
 
-import javax.swing.*;
-
+/**
+ * PlayerView class
+ * @author : ALVES Quentin
+ * @note : Defined player view code.
+ **/
 public class PlayerView extends View {
 
-    public PlayerView(IslaModelManager models, IslaControllerManager controllers ) {
+    /**
+     * Constructor
+     * @author : ALVES Quentin
+     * @param models : Current application model manager instance.
+     * @param controllers : Current application controller manager instance.
+     **/
+    public PlayerView( IslaModelManager models, IslaControllerManager controllers ) {
         super( models, controllers );
 
         controllers.RegisterObserver( "Player", this );
 
-        JButton turn_end = new JButton("Turn End !" );
-        turn_end.addActionListener( e -> { this.GetControllers( ).NotifyAll( ENotifyEvents.ENE_TURN_END ); } );
-        this.add( turn_end );
-    }
-
-    @Override
-    public void Notify( ENotifyEvents event ) {
-        if ( event == ENotifyEvents.ENE_REPAINT )
-            repaint( );
+        this.CreateButton( new Point( ), new Point( 128, 32 ), "Turn End !", ENotifyEvents.ENE_TURN_END );
     }
 
 }
